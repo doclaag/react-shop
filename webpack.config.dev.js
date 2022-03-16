@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const Dotenv = require('dotenv-webpack');
 
 
 module.exports = {
@@ -15,6 +16,7 @@ module.exports = {
         alias: {
             '@components': path.resolve(__dirname, 'src/components/'),
             '@containers': path.resolve(__dirname, 'src/containers/'),
+            '@hooks': path.resolve(__dirname, 'src/hooks/'),
             '@icons': path.resolve(__dirname, 'src/assets/icons/'),
             '@logos': path.resolve(__dirname, 'src/assets/logos/'),
             '@pages': path.resolve(__dirname, 'src/pages/'),
@@ -54,13 +56,15 @@ module.exports = {
             },
         ]
     },
-    plugins: [new HtmlWebpackPlugin({
-        template: './public/index.html',
-        filename: './index.html',
-    }),
-    new MiniCssExtractPlugin({
-        filename: '[name].css'
-    }),
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './public/index.html',
+            filename: './index.html',
+        }),
+        new MiniCssExtractPlugin({
+            filename: '[name].css'
+        }),
+        new Dotenv(),
     ]
     ,
     devServer: {

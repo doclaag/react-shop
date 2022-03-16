@@ -3,7 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerzerPlugin = require('terser-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const Dotenv = require('dotenv-webpack');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 
 module.exports = {
@@ -18,6 +19,7 @@ module.exports = {
         alias: {
             '@components': path.resolve(__dirname, 'src/components/'),
             '@containers': path.resolve(__dirname, 'src/containers/'),
+            '@hooks': path.resolve(__dirname, 'src/hooks/'),
             '@icons': path.resolve(__dirname, 'src/assets/icons/'),
             '@logos': path.resolve(__dirname, 'src/assets/logos/'),
             '@pages': path.resolve(__dirname, 'src/pages/'),
@@ -64,6 +66,7 @@ module.exports = {
     new MiniCssExtractPlugin({
         filename: '[name].css'
     }),
+    new Dotenv(),
     new CleanWebpackPlugin(),
     ],
     optimization: {

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import '@styles/ProductItem.scss';
 
+import '@styles/ProductItem.scss';
 import addToCart from '@icons/bt_add_to_cart.svg';
 
-const ProductItem = () => {
+
+const ProductItem = ({ product }) => {
 
     const [cart, setCart] = useState([]);
 
@@ -13,14 +14,14 @@ const ProductItem = () => {
 
     return (
         <div className="ProductItem">
-            <img src="https://c.tenor.com/8-0wRNnhEg8AAAAd/eren-titan.gif" alt="" />
+            <img src={product.images[0]} alt={product.title} />
             <div className="product-info">
                 <div>
-                    <p>$120,00</p>
-                    <p>The Rumbling</p>
+                    <p>$ {product.price}</p>
+                    <p>{product.title}</p>
                 </div>
                 <figure onClick={handleClick}>
-                    <img src={addToCart} alt="" />
+                    <img src={addToCart} alt="Add to Cart" />
                 </figure>
             </div>
         </div>

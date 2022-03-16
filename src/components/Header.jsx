@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '@styles/Header.scss';
 
-import { Menu } from './index';
+import Menu from '@components/Menu';
 
 import logo from '@logos/logo_yard_sale.svg';
 import menu from '@icons/icon_menu.svg';
