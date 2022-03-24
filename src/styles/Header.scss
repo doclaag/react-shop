@@ -1,13 +1,13 @@
 @import "vars";
 
 nav {
-  top: 0;
-  width: calc(100% - 48px);
   display: flex;
-  padding: 0 24px;
-  position: sticky;
-  border-bottom: 1px solid var(--very-light-pink);
   justify-content: space-between;
+  padding: 0 24px;
+  border-bottom: 1px solid var(--very-light-pink);
+  width: calc(100% - 48px);
+  top: 0;
+  position: fixed;
   background-color: #fff;
 }
 .menu {
